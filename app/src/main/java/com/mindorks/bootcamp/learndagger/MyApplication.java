@@ -7,6 +7,7 @@ import com.mindorks.bootcamp.learndagger.data.remote.NetworkService;
 import com.mindorks.bootcamp.learndagger.di.component.ApplicationComponent;
 import com.mindorks.bootcamp.learndagger.di.component.DaggerApplicationComponent;
 import com.mindorks.bootcamp.learndagger.di.module.ApplicationModule;
+import com.mindorks.bootcamp.learndagger.util.NetworkHelper;
 
 import javax.inject.Inject;
 
@@ -19,6 +20,9 @@ public class MyApplication extends Application {
 
     @Inject
     DatabaseService databaseService;
+
+    @Inject
+    NetworkHelper networkHelper;
 
     @Override
     public void onCreate() {

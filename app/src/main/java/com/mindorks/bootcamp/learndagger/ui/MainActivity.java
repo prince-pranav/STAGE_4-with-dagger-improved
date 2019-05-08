@@ -11,6 +11,7 @@ import com.mindorks.bootcamp.learndagger.di.module.ActivityModule;
 import javax.inject.Inject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
         getDependencies();
         setContentView(R.layout.activity_main);
 
-        TextView tvData = findViewById(R.id.tvData);
-        tvData.setText(viewModel.getSomeData());
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+
+//        TextView tvData = findViewById(R.id.tvData);
+//        tvData.setText(viewModel.getSomeData());
     }
 
     public void getDependencies() {
